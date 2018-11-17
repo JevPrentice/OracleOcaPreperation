@@ -1,2 +1,2 @@
 # OracleOcaPreperation
-Note for oracle oca certification preparation
+Notes and examples for oracle oca certification preparation
