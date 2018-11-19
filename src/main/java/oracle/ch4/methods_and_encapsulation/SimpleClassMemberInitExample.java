@@ -2,7 +2,7 @@ package oracle.ch4.methods_and_encapsulation;
 
 /**
  *
- * @author jevprentice
+ * @author jev
  */
 class InitializationOrderSimple {
 
@@ -34,5 +34,6 @@ public class SimpleClassMemberInitExample {
     public static void main(String[] args) {
 	System.out.println("SimpleClassMemberInitExample main");
 	final InitializationOrderSimple initializationOrderSimple = new InitializationOrderSimple();
+	// Init code blocks executes without the initializationOrderSimple variable being used.
     }
 }

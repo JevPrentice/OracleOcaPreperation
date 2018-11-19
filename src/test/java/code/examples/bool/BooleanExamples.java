@@ -41,5 +41,10 @@ public class BooleanExamples {
 	    return ((s != null) && s.equalsIgnoreCase("true"));
 	}
 	 */
+	
+	Assert.assertTrue(new Boolean("trUe"));
+	Assert.assertFalse(new Boolean("false"));
+	Assert.assertFalse(new Boolean("truuu"));
+	Assert.assertFalse(new Boolean("not true"));
     }
 }

@@ -11,8 +11,7 @@ package oracle.ch4.methods_and_encapsulation;
  */
 public class ApplyingAccessModifiers_Private {
 
-    // Assume these classes are inside different files
-    
+    // Assuming these classes are inside different files but the same package pond.duck
     //package pond.duck;
     public class FatherDuck {
 

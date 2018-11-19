@@ -33,7 +33,10 @@ public class UnaryExamples {
     public void u3() {
 	int a = 100;
 	int b = 100;
+	int c = 100;
+
 	Assert.assertEquals(-100, -a++);
 	Assert.assertEquals(-101, -(++b));
+	Assert.assertEquals(-99, -(--c));
     }
 }

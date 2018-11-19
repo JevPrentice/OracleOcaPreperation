@@ -58,10 +58,21 @@ public class DeclaringArrays {
 	}
 
 	// int[][] arr6 = new int[][8]; // Not ok, first dimention does not have a size.
-	
 	final String[][] rectangle1 = new String[3][2]; // OK
 	final String[][] rectangle2 = new String[0][]; // OK
 	// final String [][] rectangle3 = new String[][1]; // NOT OK
 	// final String [][] rectangle4 = new String[][]; // NOT OK
+
+	// ArrayIndexOutOfBoundsException is also thrown for a negative value.
+	int[] arr9 = new int[1];
+	error = "";
+	try {
+	    arr9[-1] = -1;
+	    System.out.println(arr9[-1]);
+	} catch (final ArrayIndexOutOfBoundsException e) {
+	    error = e.toString();
+	} finally {
+	    Assert.assertEquals("java.lang.ArrayIndexOutOfBoundsException: -1", error);
+	}
     }
 }

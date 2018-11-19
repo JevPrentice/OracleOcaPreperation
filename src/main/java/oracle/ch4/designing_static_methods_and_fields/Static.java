@@ -20,13 +20,13 @@ public class Static {
     }
 
     public void third() {
-        System.out.println(name);
+	System.out.println(name);
     }
 
     public static void main(String args[]) {
-        first();
-        second();
-        //third(); // DOES NOT COMPILE - third is not static.
+	first();
+	second();
+	//third(); // DOES NOT COMPILE - third is not static.
 
     }
 }
