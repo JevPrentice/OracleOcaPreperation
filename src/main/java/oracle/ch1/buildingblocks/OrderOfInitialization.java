@@ -32,10 +32,27 @@ public class OrderOfInitialization {
 	}
     }
 
+    private static class C2 {
+
+	static Double d; // refs null
+	int i = d.intValue(); // Throws a null pointer when C2 is init, since d is null.
+
+	public static void main(final String[] args) {
+	    System.out.println("C2 main"); // Static main method can be run without a problem
+	}
+    }
+
     public static void main(String[] args) {
 	System.out.println("In main");
 
 	C c1 = new C();
 	C c2 = new C();
+
+	C2.main(null); // OK - C2 does not get init
+	String error = "";
+	try {
+	    C2 c3 = new C2(); // npe trying to access intValue of null ref.
+	} catch (java.lang.NullPointerException e) {
+	}
     }
 }

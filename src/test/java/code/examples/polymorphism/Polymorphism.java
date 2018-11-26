@@ -10,21 +10,20 @@ import org.junit.Test;
  */
 public class Polymorphism {
 
-    public Polymorphism() {
+    Polymorphism() {
     }
 
-    class Bird {
+    private static class Bird {
     }
 
-    class Fish {
+    private static class Fish {
 	// compiles with -> extends Bird
-
     }
 
-    class Rodent {
+    private static class Rodent {
     }
 
-    class Capybara extends Rodent {
+    private static class Capybara extends Rodent {
     }
 
     /**
@@ -33,11 +32,12 @@ public class Polymorphism {
     @Test
     public void test() {
 	final Fish fish = new Fish();
-	//final Bird bird = (Bird) fish; // DOES NOT COMPILE
+	//final Bird bird = (Bird) fish; // DOES NOT COMPILE, fish and bird are not related.
 
 	final Rodent rodent = new Rodent();
 	String error = null;
 	try {
+	    // While any Capybara is a Rodent, not all Rodents are Capybaras, and this one is not.
 	    final Capybara capybara = (Capybara) rodent; // Throws ClassCastException at runtime 	
 	} catch (final ClassCastException e) {
 	    error = e.toString();

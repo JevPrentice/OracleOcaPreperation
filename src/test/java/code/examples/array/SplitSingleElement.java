@@ -20,5 +20,8 @@ public class SplitSingleElement {
 	final String value = "One";
 	final List<String> list = Arrays.asList(value.split(","));
 	Assert.assertEquals("[One]", list.toString());
+	final String value2 = "One,Two,Three,";
+	final List<String> list2 = Arrays.asList(value2.split(","));
+	Assert.assertEquals("[One, Two, Three]", list2.toString());
     }
 }

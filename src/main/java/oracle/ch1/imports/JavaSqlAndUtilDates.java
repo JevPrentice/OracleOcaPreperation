@@ -2,8 +2,6 @@ package oracle.ch1.imports;
 
 // Both of these lines result in an ambiguous import.
 import java.sql.Date;
-import java.util.*; // Wildcard
-//import java.util.Date;
 
 /**
  *

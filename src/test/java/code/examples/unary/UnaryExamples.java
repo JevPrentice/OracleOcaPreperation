@@ -1,5 +1,6 @@
 package code.examples.unary;
 
+import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -38,5 +39,24 @@ public class UnaryExamples {
 	Assert.assertEquals(-100, -a++);
 	Assert.assertEquals(-101, -(++b));
 	Assert.assertEquals(-99, -(--c));
+    }
+
+    @Test
+    public void u4() {
+	int a = 2;
+	boolean res;
+	res = a++ == 2 || --a == 2 && --a == 2;
+	Assert.assertTrue(res);
+	Assert.assertEquals(3, a);
+    }
+
+    @Test
+    public void IntegerExample() {
+	ArrayList<Integer> list = new ArrayList<>();
+	list.add(new Integer(10));
+	Integer i1 = list.get(0);
+	++i1; // i1 is changed, but not the original list
+	Assert.assertTrue(11 == i1);
+	Assert.assertTrue(10 == list.get(0));
     }
 }

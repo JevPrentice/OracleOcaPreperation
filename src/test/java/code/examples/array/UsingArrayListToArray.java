@@ -32,5 +32,4 @@ public class UsingArrayListToArray {
 	final String[] stringArray = list.toArray(new String[0]);
 	Assert.assertEquals(2, stringArray.length);
     }
-
 }

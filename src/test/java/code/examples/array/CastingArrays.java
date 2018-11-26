@@ -53,5 +53,4 @@ public class CastingArrays {
 	    Assert.assertEquals("java.lang.UnsupportedOperationException", error);
 	}
     }
-
 }

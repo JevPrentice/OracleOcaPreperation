@@ -5,8 +5,25 @@ import java.util.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+/* 
+ *
+ * Remember that not all the Java 8 date time classes have the same methods.
+ *
+ * Methods in LocalDate, LocalTime, and LocalDateTime:
+ *				Can call on || Can call on || Can call on
+ *				LocalDate?  || LocalTime?  || LocalDateTime?
+ * plusYears/minusYears		Yes		    No		Yes
+ * plusMonths/minusMonths	Yes		    No		Yes
+ * plusWeeks/minusWeeks		Yes		    No		Yes
+ * plusDays/minusDays		Yes		    No		Yes
+ * plusHours/minusHours		No		    Yes		Yes
+ * plusMinutes/minusMinutes	No		    Yes		Yes
+ * plusSeconds/minusSeconds	No		    Yes		Yes
+ * plusNanos/minusNanos		No		    Yes		Yes
+ */
 /**
  * Remember: Java 8 datetime classes are final and immutable.
+ *
  *
  * @author jev
  * @since Nov 17, 2018
@@ -42,7 +59,11 @@ public class JavaTime {
      */
     @Test
     public void localDateString() {
-	Assert.assertEquals("2018-10-18", LocalDate.of(2018, 10, 18).toString());
+	final LocalDate d = LocalDate.of(2018, 10, 18);
+	Assert.assertEquals("2018-10-18", d.toString());
+	Assert.assertEquals(18, d.getDayOfMonth());
+	Assert.assertEquals(10, d.getMonthValue());
+	Assert.assertEquals("OCTOBER", d.getMonth().toString()); // Its all caps.
     }
 
     /**
@@ -96,7 +117,7 @@ public class JavaTime {
 	    i = i.plus(everyWeek);
 	}
     }
-    
+
     public void workingWithDateAndTimes1() {
 
 	/* Creating Dates and Times */
@@ -115,7 +136,7 @@ public class JavaTime {
 	LocalDateTime dateTime2 = LocalDateTime.of(date1, time1);
 
 	/* DOES NOT COMPILE */
-	//LocalDate d = new LocalDate();
+	//LocalDate d = new LocalDate(); // There is no public constructor for these classes, has factory methods.
 	try {
 	    LocalDate.of(2015, Month.JANUARY, 32);// throws DateTimeException 
 	} catch (Exception e) {
@@ -159,22 +180,5 @@ public class JavaTime {
 
 	LocalDate date6 = LocalDate.of(2020, Month.JANUARY, 20);
 	//date = date.plusMinutes(1); // DOES NOT COMPILE
-
-	/*  Methods in LocalDate, LocalTime, and LocalDateTime:
-        
-                              Can call on  || Can call on || Can call on 
-                                LocalDate? || LocalTime?  || LocalDateTime? 
-        plusYears/minusYears            Yes        No            Yes
-        plusMonths/minusMonths          Yes        No            Yes
-        plusWeeks/minusWeeks            Yes        No            Yes
-        plusDays/minusDays              Yes        No            Yes
-        plusHours/minusHours            No         Yes           Yes
-        plusMinutes/minusMinutes        No         Yes           Yes
-        plusSeconds/minusSeconds        No         Yes           Yes
-        plusNanos/minusNanos            No         Yes           Yes */
-    }
-
-    public void workingWithDateAndTimes2() {
-	/* Working with Periods 145*/
     }
 }

@@ -32,11 +32,10 @@ public class ListToArrayExamples {
 	Assert.assertEquals("[one, two, three]", Arrays.asList(arr).toString()); // Arr has changed.
 	Assert.assertEquals("[one, two, three]", Arrays.asList(toArray).toString());
 
-	// List to array used incorrect
+	// List to array used incorrect here, the first element of arr2 has become null.
 	final String[] arr2 = {"one", "two", "three"}; // Populated array
 	final ArrayList<String> list2 = new ArrayList<>(3); // Empty list
 
-	// First element of arr2 has become null.
 	final String[] toArray2 = list2.toArray(arr2);
 	Assert.assertEquals("[null, two, three]", Arrays.asList(toArray2).toString());
 	Assert.assertEquals("[null, two, three]", Arrays.asList(arr2).toString());

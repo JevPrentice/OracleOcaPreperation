@@ -33,7 +33,7 @@ public class RemoveIf {
 	    return x.toLowerCase().charAt(0) != 'h';
 	};
 
-	bunnies.removeIf(predicate);
+	bunnies.removeIf(predicate); // Ejects elements for which the predicates evaluates true
 
 	Assert.assertEquals("[Hoppy]", bunnies.toString());
 
@@ -42,7 +42,7 @@ public class RemoveIf {
 	try {
 	    for (String bunny : bunnies) {
 		if (bunny.toLowerCase().startsWith("h")) {
-		    bunnies.remove(bunny);
+		    bunnies.remove(bunny); // Cant iterate and modify the list like this, See the impl for removeIf.
 		}
 	    }
 	} catch (java.util.ConcurrentModificationException e) {

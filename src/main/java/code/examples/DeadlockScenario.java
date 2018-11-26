@@ -5,6 +5,9 @@ package code.examples;
  * occur in Java when the synchronized keyword causes the executing thread to block while waiting to get the lock,
  * associated with the specified object. Since the thread might already hold locks associated with other objects, two
  * threads could each be waiting for the other to release a lock. In such case, they will end up waiting forever.
+ * 
+ * cd .../workspace/OracleOcaPreperation
+ * java -cp target/classes/ code.examples.DeadlockScenario
  *
  * @author jev
  * @since Nov 19, 2018

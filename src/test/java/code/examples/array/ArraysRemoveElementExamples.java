@@ -26,7 +26,9 @@ public class ArraysRemoveElementExamples {
 
 	Assert.assertEquals("[false, false]", list.toString());
 
-	if (list.remove(0)) { // Remove returns the value false, which causes the if statement to not be entered.
+	// Remove element at position 0 and returns the value found there which is false,
+	// this causes the if statement to not be entered.
+	if (list.remove(0)) {
 	    list.remove(1);
 	}
 
@@ -36,7 +38,7 @@ public class ArraysRemoveElementExamples {
     @Test
     public void booleanArrWrapper() {
 
-	final Boolean[] arr = new Boolean[2];
+	final Boolean[] arr = new Boolean[2]; // Notice the wrapper is being used.
 
 	final List<Boolean> list = new ArrayList<>();
 

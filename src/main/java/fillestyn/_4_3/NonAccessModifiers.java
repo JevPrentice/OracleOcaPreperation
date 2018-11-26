@@ -1,8 +1,6 @@
 package fillestyn._4_3;
 
-
 /*
-
 You can characterize your classes, interfaces, methods, 
 and variables with the following nonaccess modifiers 
 (though not all are applicable to each Java entity):
@@ -23,8 +21,6 @@ abstract , final , and static
 abstract --> classes, interfaces (redundant), methods
 final    --> classes, methods, variables
 static   --> methods, variables
-
-
  */
 public final class NonAccessModifiers {
 
@@ -108,14 +104,14 @@ abstract class AbsPerson implements Fighter {
      */
 
     public void sayName() {
-	System.out.println("Kevin Karp");
+	System.out.println("John Snow");
     }
 
     abstract public String getName(); // Notice the order or public abstract etc...
     //public abstract String getName(); // The order changes but is still valid.
 
     public final String getSurname() {
-	return "Karp";
+	return "Snow";
     }
 
     public static int getAnswerTo2Plus2() {
@@ -132,7 +128,7 @@ First non-abstract class has to implement all inherited abstract methods
  */
 class PersonK extends AbsPerson {
 
-    private String name = "Kevin";
+    private String name = "John";
 
     @Override
     public String getName() {
